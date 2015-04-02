@@ -2,21 +2,20 @@ package main // import "github.com/cloudspace/Go-UTM-Stripper"
 
 import (
 	"encoding/json"
-	"flag"
 	"fmt"
 	"net/url"
+	"os"
 	"strings"
 )
 
-// Command-line flags.
-var (
-	urlStringToStrip = flag.String("url", "", "URL to Strip")
-)
-
 func main() {
-	flag.Parse()
+	if len(os.Args) != 2 {
+		fmt.Println(errorStringAsJSON(fmt.Sprintf("Must have 1 argument: it has %v arguments", len(os.Args)-1)))
+		return
+	}
 
-	urlToStrip, err := url.Parse(*urlStringToStrip)
+	urlStringToStrip := os.Args[1]
+	urlToStrip, err := url.Parse(urlStringToStrip)
 	if err != nil {
 		fmt.Println(getJSONError(err))
 	}
@@ -57,4 +56,9 @@ func asJSON(anything interface{}) string {
 		return getJSONError(err)
 	}
 	return string(jsonData)
+}
+
+func errorStringAsJSON(errorString string) string {
+
+	return "{\"error\": \"" + errorString + "\"}"
 }

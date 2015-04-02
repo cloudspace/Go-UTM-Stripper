@@ -10,7 +10,7 @@ Input must have 1 arguments:
 -
 Input:
 ```
-go run main.go -url="postgres://user:pass@host.com:5432/path?k=v&utf_blah=2&utm_holder=10&aaa=5#f"
+go run main.go "postgres://user:pass@host.com:5432/path?k=v&utf_blah=2&utm_holder=10&aaa=5#f"
 ```
 Output (Success):
 ```
@@ -35,7 +35,7 @@ Requirements:
 go get https://github.com/cloudspace/Go-UTM-Stripper
 cd <Go-UTM-Stripper directory>/Go-UTM-Stripper
 docker run --rm -v $(pwd):/src centurylink/golang-builder
-docker build -t <username>/go-utm-stripper:0.1 ./
+docker build -t <username>/go-utm-stripper:0.3 ./
 
 ```
 

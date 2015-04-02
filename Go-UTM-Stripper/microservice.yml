@@ -3,7 +3,7 @@ microservice:
   name: 'Go_UTM_Stripper'
   description: 'Strips UTM parameters from URLs'
   docker_image: 'izackp/go-utm-stripper'
-  docker_image_tag: '0.1'
+  docker_image_tag: '0.3'
   repo_url: 'https://github.com/cloudspace/Go-UTM-Stripper'
   docker_hub_url: 'https://registry.hub.docker.com/u/izackp/go-utm-stripper/'
   category: 'URL'
@@ -11,7 +11,7 @@ microservice:
   developer_name: 'isaac'
   developer_type: 'User'
   published: true
-  command: '/Go-UTM-Stripper -url=[url]'
+  command: '/Go-UTM-Stripper [url]'
   inputs:
     url:
       param_type: 'String'
