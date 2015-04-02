@@ -1,0 +1,25 @@
+microservice:
+  spec_version: '2.0'
+  name: 'Go_UTM_Stripper'
+  description: 'Strips UTM parameters from URLs'
+  docker_image: 'izackp/go_utm_stripper'
+  docker_image_tag: '0.1'
+  repo_url: 'https://github.com/cloudspace/Go-MySQL-Microservice'
+  docker_hub_url: 'https://registry.hub.docker.com/u/izackp/go_utm_stripper/'
+  category: 'URL'
+  tags: ['url', 'utm', 'utm stripper', 'go', 'golang']
+  developer_name: 'isaac'
+  developer_type: 'User'
+  published: true
+  command: '/Go-UTM-Stripper -url=[url]'
+  inputs:
+    url:
+      param_type: 'String'
+      regex: '^.*$'
+      required: true
+      secure: false
+      description: 'URL to strip'
+  outputs:
+    result:
+      param_type: 'String'
+      description: 'A stripped URL'
